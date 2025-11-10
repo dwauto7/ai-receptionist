@@ -34,61 +34,36 @@ export default function VideoHero() {
           <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-gray-900/50 z-2"></div>
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-3 text-center text-white max-w-4xl px-5">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-            AI Voice Agent
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 drop-shadow-md leading-relaxed">
-            Never miss a customer call again. 24/7 automated call answering and appointment booking.
-          </p>
-          
-          {/* CTA Buttons with more spacing */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link 
-              href="/signup" 
-              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:translate-y-[-2px] shadow-lg"
-            >
-              Start Free Trial
-            </Link>
-            <button 
-              onClick={() => setShowDemo(true)}
-              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:translate-y-[-2px] flex items-center gap-3"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-              Watch Demo Again
-            </button>
-          </div>
+       {/* Hero Content */}
+<div className="relative z-3 text-center text-white max-w-4xl px-5">
+  <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+    AI Voice Agent
+  </h1>
+  <p className="text-xl md:text-2xl mb-8 drop-shadow-md leading-relaxed">
+    Never miss a customer call again. 24/7 automated call answering and appointment booking.
+  </p>
+  
+  {/* CTA Buttons - Clean and simple */}
+  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <Link 
+      href="/signup" 
+      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:translate-y-[-2px] shadow-lg"
+    >
+      Start Free Trial
+    </Link>
+    <button 
+      onClick={() => setShowDemo(true)}
+      className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:translate-y-[-2px] flex items-center gap-3"
+    >
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      Watch Demo
+    </button>
+  </div>
 
-          {/* How It Works Preview */}
-          <div className="mt-16 bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-            <h3 className="text-2xl font-semibold mb-4">How It Works</h3>
-            <div className="grid grid-cols-3 gap-4 text-sm">
-              <div className="text-center">
-                <div className="bg-white/20 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-white font-bold">1</span>
-                </div>
-                <p>Customer Calls</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-white/20 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-white font-bold">2</span>
-                </div>
-                <p>AI Answers</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-white/20 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-white font-bold">3</span>
-                </div>
-                <p>Books & Confirms</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+  {/* Remove the "How It Works" preview section entirely */}
+</div>
       {/* Demo Modal */}
       {showDemo && (
         <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
