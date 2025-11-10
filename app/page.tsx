@@ -4,18 +4,18 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
-     {/* Navigation */}
-<nav className="bg-white shadow-lg border-b border-gray-200">
+    // Navigation - Green theme
+<nav className="bg-white shadow-lg border-b border-green-200">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex justify-between h-16">
       <div className="flex items-center">
-        <span className="text-xl font-bold text-gray-900">AI Receptionists</span>
+        <span className="text-xl font-bold text-green-600">AI Receptionists</span>
       </div>
       <div className="flex items-center space-x-8">
-        <a href="/" className="text-gray-700 hover:text-gray-900 font-medium">Home</a>
-        <a href="/dashboard-preview" className="text-gray-700 hover:text-gray-900 font-medium">Dashboard</a>
-        <a href="/contact" className="text-gray-700 hover:text-gray-900 font-medium">Contact</a>
-        <Link href="/signup" className="bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 font-medium transition-colors">
+        <a href="/" className="text-gray-700 hover:text-green-600 font-medium">Home</a>
+        <a href="/dashboard-preview" className="text-gray-700 hover:text-green-600 font-medium">Dashboard</a>
+        <a href="/contact" className="text-gray-700 hover:text-green-600 font-medium">Contact</a>
+        <Link href="/signup" className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 font-medium transition-colors">
           Start Free Trial
         </Link>
       </div>
