@@ -1,3 +1,5 @@
+import VideoHero from '@/components/VideoHero';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -20,28 +22,10 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              AI Voice Agent
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              Never miss a customer call again. 24/7 automated call answering and appointment booking.
-            </p>
-            <div className="space-x-4">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700">
-                Start Free Trial
-              </button>
-              <button className="border border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50">
-                Watch Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* NEW: Video Hero Section */}
+      <VideoHero />
 
+      {/* Keep ALL your existing sections below */}
       {/* How It Works */}
       <section className="bg-gray-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
