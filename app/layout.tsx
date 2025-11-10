@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import './globals.css'  // ← ADD THIS LINE
 
 export const metadata: Metadata = {
   title: 'AI Receptionist - Never Miss Customer Calls',
