@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'AI Receptionist - Never Miss Customer Calls',
-  description: '24/7 AI voice agent for service businesses. Automated call answering, appointment booking, and SMS reminders.',
+  description: '24/7 AI voice agent for service businesses',
 }
 
 export default function RootLayout({
@@ -12,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }
