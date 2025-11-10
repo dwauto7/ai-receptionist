@@ -32,8 +32,9 @@ export default function SignupPage() {
         {/* Header */}
         <div className="bg-blue-600 px-6 py-8">
           <Link href="/" className="text-white text-lg font-bold">AIReception</Link>
-          <h1 className="mt-4 text-2xl font-bold text-white">Start Your Free Trial</h1>
-          <p className="mt-2 text-blue-100">Get 14 days free. No credit card required.</p>
+          // Change in signup page
+            <h1 className="mt-4 text-2xl font-bold text-white">Start Your 7-Day Free Trial</h1>
+            <p className="mt-2 text-blue-100">No credit card required • 10 free calls included</p>
         </div>
 
         {/* Form */}
