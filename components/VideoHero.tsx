@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function VideoHero() {
   const [showDemo, setShowDemo] = useState(false);
@@ -19,7 +20,7 @@ export default function VideoHero() {
             className="w-full h-full object-cover"
           >
             <source src="/assets/videos/ai-demo-background.mp4" type="video/mp4" />
-            {/* Fallback image */}
+            {/* Fallback image if video doesn't load */}
             <img src="/assets/images/fallback-hero.jpg" alt="AI Reception Demo" />
           </video>
           {/* Overlay */}
@@ -37,9 +38,12 @@ export default function VideoHero() {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:translate-y-[-2px] shadow-lg">
+            <Link 
+              href="/signup" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:translate-y-[-2px] shadow-lg"
+            >
               Start Free Trial
-            </button>
+            </Link>
             <button 
               onClick={() => setShowDemo(true)}
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:translate-y-[-2px] flex items-center gap-2"
