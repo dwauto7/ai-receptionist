@@ -27,7 +27,7 @@ export default function DashboardPreview() {
           </button>
         </div>
         
-        {/* Stats Overview - Cleaner */}
+        {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
             <h3 className="text-gray-600 text-sm font-medium">Calls Today</h3>
@@ -68,14 +68,6 @@ export default function DashboardPreview() {
                 </div>
                 <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">New</span>
               </div>
-              <div className="flex items-center justify-between p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded">
-                <div>
-                  <p className="font-semibold text-gray-900">Raj - Follow-up</p>
-                  <p className="text-gray-600 text-sm">4:30 PM - 5:00 PM</p>
-                  <p className="text-gray-500 text-sm">+60 13-456 7890</p>
-                </div>
-                <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Pending</span>
-              </div>
             </div>
           </div>
 
@@ -95,9 +87,6 @@ export default function DashboardPreview() {
                   <button className="text-blue-600 text-sm hover:text-blue-800 font-medium">
                     Play Recording
                   </button>
-                  <button className="text-gray-600 text-sm hover:text-gray-800 font-medium">
-                    View Transcript
-                  </button>
                 </div>
               </div>
 
@@ -113,35 +102,9 @@ export default function DashboardPreview() {
                   <button className="text-blue-600 text-sm hover:text-blue-800 font-medium">
                     Play Recording
                   </button>
-                  <button className="text-gray-600 text-sm hover:text-gray-800 font-medium">
-                    View Transcript
-                  </button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Quick Actions - Simplified */}
-        <div className="mt-8 bg-white rounded-lg shadow-sm p-6">
-          <h2 className="text-xl font-semibold mb-4 text-gray-900">Quick Actions</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <button className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-200 transition-colors">
-              <div className="text-blue-500 text-2xl mb-2">📊</div>
-              <span className="text-sm font-medium text-gray-700">Reports</span>
-            </button>
-            <button className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-200 transition-colors">
-              <div className="text-blue-500 text-2xl mb-2">👥</div>
-              <span className="text-sm font-medium text-gray-700">Customers</span>
-            </button>
-            <button className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-200 transition-colors">
-              <div className="text-blue-500 text-2xl mb-2">📞</div>
-              <span className="text-sm font-medium text-gray-700">Call Logs</span>
-            </button>
-            <button className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-200 transition-colors">
-              <div className="text-blue-500 text-2xl mb-2">⚙️</div>
-              <span className="text-sm font-medium text-gray-700">Settings</span>
-            </button>
           </div>
         </div>
       </div>
