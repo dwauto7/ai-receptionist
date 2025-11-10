@@ -26,83 +26,80 @@ export default function Home() {
       {/* Video Hero Section */}
       <VideoHero />
 
-      {/* How It Works Section */}
-      <section className="bg-gray-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
-          <div className="grid md:grid-cols-5 gap-8">
-            {/* Step 1 */}
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">1</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Customer Calls</h3>
-              <p className="text-gray-600">Your business number rings, anytime day or night</p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">2</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">AI Answers</h3>
-              <p className="text-gray-600">Natural conversation in English or Malay</p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">3</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Books Calendar</h3>
-              <p className="text-gray-600">Appointment automatically added to your calendar</p>
-            </div>
-
-            {/* Step 4 */}
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">4</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">SMS Confirmation</h3>
-              <p className="text-gray-600">Instant SMS sent to customer with appointment details</p>
-            </div>
-
-            {/* Step 5 */}
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">5</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Email Notification</h3>
-              <p className="text-gray-600">You receive email summary; customer gets confirmation</p>
-            </div>
-          </div>
-
-          {/* Additional Explanation */}
-          <div className="mt-12 bg-white rounded-lg p-6 border border-gray-200">
-            <h4 className="text-lg font-semibold text-center mb-4">Real-time Business Updates</h4>
-            <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-600">
-              <div>
-                <h5 className="font-semibold mb-2">📱 For Your Business:</h5>
-                <ul className="space-y-1">
-                  <li>• Instant email notifications for new appointments</li>
-                  <li>• Real-time dashboard with all bookings</li>
-                  <li>• Calendar sync with Google/Outlook</li>
-                  <li>• Daily booking summary reports</li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-2">📞 For Your Customers:</h5>
-                <ul className="space-y-1">
-                  <li>• Immediate SMS confirmation</li>
-                  <li>• Email appointment details</li>
-                  <li>• Reminder notifications before appointment</li>
-                  <li>• Easy rescheduling via SMS</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    {/* How It Works Section */}
+<section className="bg-gray-50 py-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">How It Works</h2>
+    <div className="grid md:grid-cols-3 gap-12">
+      {/* Step 1 */}
+      <div className="text-center">
+        <div className="bg-gray-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span className="text-white font-bold text-2xl">1</span>
         </div>
-      </section>
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900">Customer Calls</h3>
+        <p className="text-gray-600 text-lg">Your business number rings 24/7, day or night</p>
+      </div>
+
+      {/* Step 2 */}
+      <div className="text-center">
+        <div className="bg-gray-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span className="text-white font-bold text-2xl">2</span>
+        </div>
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900">AI Conversation</h3>
+        <p className="text-gray-600 text-lg">Natural AI conversation in English or Malay</p>
+      </div>
+
+      {/* Step 3 */}
+      <div className="text-center">
+        <div className="bg-gray-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span className="text-white font-bold text-2xl">3</span>
+        </div>
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900">Auto-Confirmation</h3>
+        <p className="text-gray-600 text-lg">Books calendar & sends SMS/email confirmations</p>
+      </div>
+    </div>
+
+    {/* Dashboard Preview */}
+    <div className="mt-20 bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+      <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">Real-time Dashboard</h3>
+      <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h4 className="text-xl font-semibold mb-4 text-gray-900">Everything You Need in One Place</h4>
+          <ul className="space-y-3 text-gray-600">
+            <li className="flex items-center">
+              <span className="text-green-500 mr-3">✓</span>
+              Live calendar with all appointments
+            </li>
+            <li className="flex items-center">
+              <span className="text-green-500 mr-3">✓</span>
+              Customer details & contact info
+            </li>
+            <li className="flex items-center">
+              <span className="text-green-500 mr-3">✓</span>
+              SMS & email communication history
+            </li>
+            <li className="flex items-center">
+              <span className="text-green-500 mr-3">✓</span>
+              Real-time notifications for new bookings
+            </li>
+            <li className="flex items-center">
+              <span className="text-green-500 mr-3">✓</span>
+              Google Calendar & Outlook sync
+            </li>
+          </ul>
+        </div>
+        <div className="bg-gray-100 rounded-lg p-6 border border-gray-300">
+          <div className="text-center text-gray-500">
+            [Dashboard Preview Image]
+          </div>
+          <p className="text-center text-sm text-gray-500 mt-4">
+            See all your bookings, customer info, and communication history in one dashboard
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Simple CTA Section (replaces Pricing) */}
       <section className="bg-white py-20">
