@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove the experimental section - appDir is now stable
+  experimental: {
+    serverActions: true,
+  },
+  images: {
+    domains: ['images.unsplash.com'], // For future image optimization
+  },
 }
 
 module.exports = nextConfig
