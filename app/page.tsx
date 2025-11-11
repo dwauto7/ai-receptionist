@@ -1,183 +1,328 @@
 'use client'
 
 import { useState } from 'react'
-import { CheckCircle, Users, MessageCircle, Calendar, Target, ArrowRight, Zap, Shield } from 'lucide-react'
+import { CheckCircle, Users, MessageCircle, Calendar, Target, ArrowRight, Zap, Shield, Star, Play, ChevronRight } from 'lucide-react'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleGetStarted = () => {
     setIsLoading(true)
-    // Simulate API call or navigation
     setTimeout(() => {
       setIsLoading(false)
-      // Add your navigation logic here
     }, 2000)
   }
 
+  const features = [
+    {
+      icon: <Zap className="h-6 w-6" />,
+      title: "AI-Powered Outreach",
+      description: "Personalized messaging at scale with human approval"
+    },
+    {
+      icon: <Target className="h-6 w-6" />,
+      title: "Precision Targeting",
+      description: "Reach your ideal clients based on industry & behavior"
+    },
+    {
+      icon: <Calendar className="h-6 w-6" />,
+      title: "Automated Booking",
+      description: "Seamless calendar integration for qualified meetings"
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Human Oversight",
+      description: "Every campaign reviewed by our experts before sending"
+    }
+  ]
+
+  const steps = [
+    {
+      number: "01",
+      title: "Define Your Ideal Client",
+      description: "Tell us your target industry, company size, and decision-maker profiles"
+    },
+    {
+      number: "02",
+      title: "AI + Human Outreach",
+      description: "Our AI crafts personalized messages, reviewed by humans before sending"
+    },
+    {
+      number: "03",
+      title: "Qualify & Schedule",
+      description: "Set your criteria, we handle qualification and book meetings directly to your calendar"
+    }
+  ]
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <Zap className="h-8 w-8 text-blue-600" />
-              <span className="text-2xl font-bold text-gray-900">LeadGenAI</span>
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Zap className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-xl font-bold text-gray-900">zynq.ai</span>
             </div>
-            <button 
-              onClick={handleGetStarted}
-              disabled={isLoading}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? 'Loading...' : 'Get Started'}
-            </button>
+            <div className="flex items-center space-x-4">
+              <button className="text-gray-600 hover:text-gray-900 font-medium">
+                How it Works
+              </button>
+              <button className="text-gray-600 hover:text-gray-900 font-medium">
+                Pricing
+              </button>
+              <button 
+                onClick={handleGetStarted}
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-200"
+              >
+                Get Started
+              </button>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            AI-Powered Lead Generation
-            <span className="text-blue-600 block">That Actually Works</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Stop wasting time on cold outreach. Get qualified leads that actually want to talk to you. 
-            Human-approved AI messaging with your qualification criteria.
-          </p>
+      <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2 mb-6">
+              <Star className="h-4 w-4 text-blue-600" />
+              <span className="text-sm font-medium text-blue-600">No Cold Calls. No Ad Spend. Just Results.</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Stop Chasing Leads
+              <span className="text-blue-600 block">We Fill Your Calendar</span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              AI-powered lead generation with human oversight. 
+              <span className="font-semibold"> Pay only for appointments that show up.</span>
+            </p>
 
-          {/* Limited Time Offer */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-green-200 max-w-md mx-auto mb-8">
-            <div className="text-center">
-              <p className="text-lg text-gray-600 mb-2">
-                <span className="line-through">Usually RM10,000</span>
-              </p>
-              <p className="text-3xl font-bold text-green-600 mb-4">
-                Now RM5,000
-              </p>
-              <p className="text-sm text-gray-500">Limited Time Offer</p>
+            <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
+              We use automation to find, contact, and book your ideal clients. 
+              No ad spend. No cold calling. Just qualified meetings.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <button 
+                onClick={handleGetStarted}
+                disabled={isLoading}
+                className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition duration-200 inline-flex items-center space-x-2 disabled:opacity-50"
+              >
+                <span>Get Qualified Leads</span>
+                <ArrowRight className="h-5 w-5" />
+              </button>
+              
+              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:border-blue-600 hover:text-blue-600 transition duration-200 inline-flex items-center space-x-2">
+                <Play className="h-5 w-5" />
+                <span>See How It Works</span>
+              </button>
+            </div>
+
+            {/* Social Proof */}
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-500">
+              <div className="flex items-center space-x-2">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-8 h-8 bg-gray-300 rounded-full border-2 border-white"></div>
+                  ))}
+                </div>
+                <span>Join 250+ businesses</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <span>4.9/5 from 128 reviews</span>
+              </div>
             </div>
           </div>
-
-          <button 
-            onClick={handleGetStarted}
-            disabled={isLoading}
-            className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition duration-200 inline-flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <span>Start Getting Qualified Leads</span>
-            <ArrowRight className="h-5 w-5" />
-          </button>
         </div>
       </div>
 
-      {/* How It Works Section */}
-      <div className="bg-white py-16">
+      {/* Logo Cloud */}
+      <div className="bg-gray-50 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-            <p className="text-xl text-gray-600">Simple, transparent process for quality leads</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Step 1 */}
-            <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200">
-              <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-lg mb-4">
-                <Target className="h-6 w-6 text-white" />
+          <p className="text-center text-gray-500 text-sm font-medium mb-8">TRUSTED BY GROWING BUSINESSES</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-60">
+            {['Tech', 'Agency', 'Consulting', 'SaaS', 'Finance', 'Health'].map((industry) => (
+              <div key={industry} className="flex items-center justify-center">
+                <div className="h-8 bg-gray-300 rounded w-24"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">1. Define Your Target</h3>
-              <p className="text-gray-600">You specify your ideal industry and client profile</p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="bg-green-50 rounded-2xl p-8 border border-green-200">
-              <div className="flex items-center justify-center w-12 h-12 bg-green-600 rounded-lg mb-4">
-                <MessageCircle className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">2. AI-Powered Outreach</h3>
-              <p className="text-gray-600">Our AI crafts personalized messages, with human approval before sending</p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="bg-purple-50 rounded-2xl p-8 border border-purple-200">
-              <div className="flex items-center justify-center w-12 h-12 bg-purple-600 rounded-lg mb-4">
-                <Calendar className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">3. Qualify & Book Meetings</h3>
-              <p className="text-gray-600">You set qualification criteria and questions - we handle the rest</p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="bg-gray-50 py-16">
+      {/* How It Works */}
+      <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Approach</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <Shield className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Human-Approved AI</h3>
-              <p className="text-sm text-gray-600">Every message reviewed by humans before sending</p>
-            </div>
-
-            <div className="text-center">
-              <Users className="h-8 w-8 text-green-600 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Quality Focused</h3>
-              <p className="text-sm text-gray-600">Only interested, qualified leads that match your criteria</p>
-            </div>
-
-            <div className="text-center">
-              <CheckCircle className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Transparent Process</h3>
-              <p className="text-sm text-gray-600">You control targeting and qualification parameters</p>
-            </div>
-
-            <div className="text-center">
-              <Zap className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Time Efficient</h3>
-              <p className="text-sm text-gray-600">Focus on closing while we handle lead generation</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-blue-600 py-16">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to Fill Your Pipeline?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Join businesses getting qualified leads with our transparent, AI-powered approach.
-          </p>
-          
-          {/* Limited Time Offer Reminder */}
-          <div className="bg-yellow-400 rounded-lg p-4 mb-8 max-w-md mx-auto">
-            <p className="text-gray-900 font-semibold">
-              ⏰ Limited Time: RM5,000 (Usually RM10,000)
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">How We Fill Your Calendar</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Simple three-step process to get you qualified meetings
             </p>
           </div>
 
-          <button 
-            onClick={handleGetStarted}
-            disabled={isLoading}
-            className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition duration-200 inline-flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <span>Start Getting Qualified Leads</span>
-            <ArrowRight className="h-5 w-5" />
-          </button>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {steps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                  {step.number}
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Card */}
+          <div className="bg-blue-600 rounded-2xl p-8 text-center text-white">
+            <h3 className="text-2xl font-bold mb-4">Ready to Fill Your Pipeline?</h3>
+            <p className="text-blue-100 mb-6 text-lg">Get your first qualified leads this week</p>
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-200">
+              Book Free Consultation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Features */}
+      <div className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose zynq.ai</h2>
+            <p className="text-xl text-gray-600">The modern way to generate qualified leads</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Pricing Section */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
+            <p className="text-xl text-gray-600">Pay only for results that matter</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Starter Plan */}
+            <div className="border border-gray-200 rounded-2xl p-8">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
+                <p className="text-gray-600">Perfect for testing the waters</p>
+              </div>
+              
+              <div className="mb-6">
+                <div className="flex items-baseline mb-2">
+                  <span className="text-4xl font-bold text-gray-900">RM5,000</span>
+                  <span className="text-gray-500 ml-2">/month</span>
+                </div>
+                <p className="text-sm text-gray-500">Limited time offer</p>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {['5 qualified meetings/month', 'AI + human outreach', 'Basic targeting', 'Email support'].map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span className="text-gray-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">
+                Get Started
+              </button>
+            </div>
+
+            {/* Professional Plan */}
+            <div className="border-2 border-blue-600 rounded-2xl p-8 relative bg-blue-50">
+              <div className="absolute top-0 right-0 bg-blue-600 text-white px-4 py-1 rounded-bl-lg rounded-tr-xl text-sm font-semibold">
+                MOST POPULAR
+              </div>
+              
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional</h3>
+                <p className="text-gray-600">For growing businesses</p>
+              </div>
+              
+              <div className="mb-6">
+                <div className="flex items-baseline mb-2">
+                  <span className="text-4xl font-bold text-gray-900">RM8,000</span>
+                  <span className="text-gray-500 ml-2">/month</span>
+                </div>
+                <p className="text-sm text-gray-500">Best value</p>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {['15 qualified meetings/month', 'Advanced AI targeting', 'Multi-channel outreach', 'Priority support', 'Custom qualification'].map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span className="text-gray-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Final CTA */}
+      <div className="bg-gray-900 py-20">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Ready to Stop Chasing Leads?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join businesses getting qualified meetings with our AI-powered approach.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition duration-200">
+              Book Free Consultation
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition duration-200">
+              View Case Studies
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2024 LeadGenAI. All rights reserved.</p>
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Zap className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-xl font-bold">zynq.ai</span>
+            </div>
+            <p className="text-gray-400">&copy; 2024 zynq.ai. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
