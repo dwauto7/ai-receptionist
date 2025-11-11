@@ -1,5 +1,5 @@
 {
-  "name": "ai-receptionist",
+  "name": "calnova-ai",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,18 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.0.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "next": "14.0.0",
+    "lucide-react": "^0.294.0",
+    "axios": "^1.6.0",
+    "react-hook-form": "^7.47.0",
+    "zod": "^3.22.0",
+    "framer-motion": "^10.16.0",
+    "react-hot-toast": "^2.4.1",
+    "@hookform/resolvers": "^3.3.2"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "autoprefixer": "^10.0.0",
+    "autoprefixer": "^10.0.1",
     "postcss": "^8.0.0",
-    "tailwindcss": "^3.0.0",
+    "tailwindcss": "^3.3.0",
     "eslint": "^8.0.0",
     "eslint-config-next": "14.0.0"
   }
