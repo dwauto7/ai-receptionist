@@ -14,11 +14,11 @@ export default function Home() {
               <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium">Home</Link>
               <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 font-medium">How It Works</a>
               <a href="#pricing" className="text-gray-700 hover:text-blue-600 font-medium">Pricing</a>
-              <Link 
-                href="/signup" 
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium transition-colors"
+             <Link 
+                href="/signup"
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
               >
-                Book Free Strategy Session
+                Book Free Consultation
               </Link>
             </div>
           </div>
