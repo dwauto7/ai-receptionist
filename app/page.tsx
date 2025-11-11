@@ -20,11 +20,17 @@ export default function Home() {
               <a href="#pricing" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
                 Pricing
               </a>
+              <Link 
+                href="/dashboard" 
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              >
+                Dashboard
+              </Link>
               <a 
                 href="https://calnova.ai/signup" 
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-lg hover:shadow-xl"
               >
-                Book Free Strategy Session
+                Book Free Consultation
               </a>
             </div>
           </div>
@@ -35,7 +41,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            🚀 Limited Time: 50% Off First Month + Free Strategy Session
+            🚀 Limited Time: 50% Off Setup + RM200 Per Lead
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             Stop Chasing,
@@ -47,17 +53,17 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
-              href="https://calnova.ai/signup" 
+              href="#pricing" 
               className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              🚀 Start Getting Clients Now
+              🚀 Start Your 50% Off Trial
             </a>
-            <a 
-              href="#dashboard-preview" 
+            <Link 
+              href="/dashboard" 
               className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-all font-medium text-lg"
             >
-              📊 See Dashboard Preview
-            </a>
+              📊 Access Dashboard
+            </Link>
           </div>
           <div className="mt-8 flex justify-center items-center space-x-8 text-gray-600">
             <div className="flex items-center">
@@ -123,7 +129,7 @@ export default function Home() {
                     <div className="text-gray-600 text-sm">New Clients</div>
                   </div>
                   <div className="bg-orange-50 p-4 rounded-lg">
-                    <div className="text-2xl font-bold text-orange-600">$15K</div>
+                    <div className="text-2xl font-bold text-orange-600">RM45K</div>
                     <div className="text-gray-600 text-sm">Revenue Generated</div>
                   </div>
                 </div>
@@ -162,12 +168,12 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-6 text-center">
-                  <a 
-                    href="https://calnova.ai/signup" 
+                  <Link 
+                    href="/dashboard" 
                     className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium"
                   >
                     Access Your Dashboard
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -198,7 +204,7 @@ export default function Home() {
                 "We went from sporadic client work to fully booked in 60 days. AI Blizzard delivered 22 qualified leads last month alone."
               </p>
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-green-600">+$45K Revenue</span>
+                <span className="font-semibold text-green-600">+RM135K Revenue</span>
                 <span className="text-gray-500">3 new clients</span>
               </div>
             </div>
@@ -213,7 +219,7 @@ export default function Home() {
                 "No more wasting time on unqualified leads. Every call booked through the system is with someone ready to invest."
               </p>
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-green-600">+$28K Revenue</span>
+                <span className="font-semibold text-green-600">+RM84K Revenue</span>
                 <span className="text-gray-500">85% close rate</span>
               </div>
             </div>
@@ -228,7 +234,7 @@ export default function Home() {
                 "The dashboard integration with Calendly and Airtable CRM saved us 20+ hours per month on admin work."
               </p>
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-green-600">+$67K Revenue</span>
+                <span className="font-semibold text-green-600">+RM201K Revenue</span>
                 <span className="text-gray-500">5 enterprise clients</span>
               </div>
             </div>
@@ -290,7 +296,7 @@ export default function Home() {
               Simple Pricing, Extraordinary Results
             </h2>
             <p className="text-xl text-gray-600">
-              Everything you need to fill your pipeline with qualified clients
+              Pay only for qualified leads that book meetings
             </p>
           </div>
           
@@ -303,14 +309,17 @@ export default function Home() {
               
               <div className="p-8 md:p-12">
                 <div className="text-center mb-8">
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-5xl font-bold text-white">$497</span>
-                    <span className="text-blue-200 ml-3 text-xl line-through">$994</span>
-                    <span className="bg-green-400 text-green-900 text-sm font-bold ml-4 px-3 py-1 rounded-full">
-                      50% OFF FIRST MONTH
+                  <div className="flex items-baseline justify-center flex-wrap gap-4">
+                    <div>
+                      <span className="text-4xl font-bold text-white">RM5,000</span>
+                      <span className="text-blue-200 ml-3 text-xl line-through">RM10,000</span>
+                    </div>
+                    <span className="bg-green-400 text-green-900 text-sm font-bold px-4 py-2 rounded-full">
+                      50% OFF SETUP
                     </span>
                   </div>
-                  <p className="text-blue-200 mt-3 text-lg">$994/month after first month</p>
+                  <p className="text-blue-200 mt-4 text-lg">+ <span className="font-bold text-white">RM200</span> per qualified lead that books a meeting</p>
+                  <p className="text-blue-100 text-sm mt-2">No monthly subscription fees</p>
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -340,7 +349,7 @@ export default function Home() {
                     <ul className="space-y-3 text-blue-100">
                       <li className="flex items-center">
                         <span className="text-green-400 mr-3 text-xl">✓</span>
-                        <span>Free strategy session ($500 value)</span>
+                        <span>Free strategy session (RM2,000 value)</span>
                       </li>
                       <li className="flex items-center">
                         <span className="text-green-400 mr-3 text-xl">✓</span>
@@ -366,7 +375,7 @@ export default function Home() {
                     🚀 Start Your 50% Off Trial
                   </a>
                   <p className="text-blue-200 mt-4 text-sm">
-                    🔒 No contract required • Cancel anytime • 48-hour setup
+                    🔒 Pay per lead • No contract • Cancel anytime
                   </p>
                 </div>
               </div>
@@ -389,14 +398,14 @@ export default function Home() {
               href="https://calnova.ai/signup" 
               className="block sm:inline-block bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all font-bold text-lg shadow-2xl"
             >
-              🚀 Book Free Strategy Session
+              🚀 Book Free Consultation
             </a>
-            <a 
-              href="#how-it-works" 
+            <Link 
+              href="/dashboard" 
               className="block sm:inline-block border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
             >
-              Learn More
-            </a>
+              📊 View Dashboard
+            </Link>
           </div>
         </div>
       </section>
