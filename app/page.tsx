@@ -10,7 +10,9 @@ export default function Home() {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+      // Redirect to signup page
+      window.location.href = '/signup'
+    }, 1000)
   }
 
   const features = [
@@ -64,13 +66,19 @@ export default function Home() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Zap className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">zynq.ai</span>
+              <span className="text-xl font-bold text-gray-900">calnova.ai</span>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="text-gray-600 hover:text-gray-900 font-medium">
+              <button 
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-gray-600 hover:text-gray-900 font-medium"
+              >
                 How it Works
               </button>
-              <button className="text-gray-600 hover:text-gray-900 font-medium">
+              <button 
+                onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-gray-600 hover:text-gray-900 font-medium"
+              >
                 Pricing
               </button>
               <button 
@@ -114,11 +122,23 @@ export default function Home() {
                 disabled={isLoading}
                 className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition duration-200 inline-flex items-center space-x-2 disabled:opacity-50"
               >
-                <span>Get Qualified Leads</span>
-                <ArrowRight className="h-5 w-5" />
+                {isLoading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <span>Redirecting...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Get Qualified Leads</span>
+                    <ArrowRight className="h-5 w-5" />
+                  </>
+                )}
               </button>
               
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:border-blue-600 hover:text-blue-600 transition duration-200 inline-flex items-center space-x-2">
+              <button 
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:border-blue-600 hover:text-blue-600 transition duration-200 inline-flex items-center space-x-2"
+              >
                 <Play className="h-5 w-5" />
                 <span>See How It Works</span>
               </button>
@@ -162,7 +182,7 @@ export default function Home() {
       </div>
 
       {/* How It Works */}
-      <div className="py-20 bg-white">
+      <div id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">How We Fill Your Calendar</h2>
@@ -187,7 +207,10 @@ export default function Home() {
           <div className="bg-blue-600 rounded-2xl p-8 text-center text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Fill Your Pipeline?</h3>
             <p className="text-blue-100 mb-6 text-lg">Get your first qualified leads this week</p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-200">
+            <button 
+              onClick={handleGetStarted}
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-200"
+            >
               Book Free Consultation
             </button>
           </div>
@@ -198,13 +221,13 @@ export default function Home() {
       <div className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose zynq.ai</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Calnova.ai</h2>
             <p className="text-xl text-gray-600">The modern way to generate qualified leads</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
+              <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition duration-200">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
                   {feature.icon}
                 </div>
@@ -217,7 +240,7 @@ export default function Home() {
       </div>
 
       {/* Pricing Section */}
-      <div className="py-20 bg-white">
+      <div id="pricing" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
@@ -226,7 +249,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Starter Plan */}
-            <div className="border border-gray-200 rounded-2xl p-8">
+            <div className="border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition duration-200">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
                 <p className="text-gray-600">Perfect for testing the waters</p>
@@ -249,13 +272,16 @@ export default function Home() {
                 ))}
               </ul>
 
-              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">
+              <button 
+                onClick={handleGetStarted}
+                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200"
+              >
                 Get Started
               </button>
             </div>
 
             {/* Professional Plan */}
-            <div className="border-2 border-blue-600 rounded-2xl p-8 relative bg-blue-50">
+            <div className="border-2 border-blue-600 rounded-2xl p-8 relative bg-blue-50 hover:shadow-lg transition duration-200">
               <div className="absolute top-0 right-0 bg-blue-600 text-white px-4 py-1 rounded-bl-lg rounded-tr-xl text-sm font-semibold">
                 MOST POPULAR
               </div>
@@ -282,10 +308,26 @@ export default function Home() {
                 ))}
               </ul>
 
-              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">
+              <button 
+                onClick={handleGetStarted}
+                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200"
+              >
                 Get Started
               </button>
             </div>
+          </div>
+
+          {/* Enterprise Note */}
+          <div className="text-center mt-8">
+            <p className="text-gray-600">
+              Need custom solutions?{' '}
+              <button 
+                onClick={handleGetStarted}
+                className="text-blue-600 hover:text-blue-700 font-semibold"
+              >
+                Contact us for enterprise pricing
+              </button>
+            </p>
           </div>
         </div>
       </div>
@@ -301,7 +343,10 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition duration-200">
+            <button 
+              onClick={handleGetStarted}
+              className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition duration-200"
+            >
               Book Free Consultation
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition duration-200">
@@ -319,9 +364,10 @@ export default function Home() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Zap className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">zynq.ai</span>
+              <span className="text-xl font-bold">calnova.ai</span>
             </div>
-            <p className="text-gray-400">&copy; 2024 zynq.ai. All rights reserved.</p>
+            <p className="text-gray-400 mb-2">AI-powered lead generation that actually works</p>
+            <p className="text-gray-400">&copy; 2024 Calnova AI. All rights reserved.</p>
           </div>
         </div>
       </footer>
